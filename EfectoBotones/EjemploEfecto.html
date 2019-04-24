@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Ejemplo de Efecto de teclas</h1>
+    <img src="boton.jpg">
+    <img src="boton.jpg">
+    <script>
+      function presionar(tecla) {
+          tecla.target.style.transform = "scale(0.9,0.9)";
+      }
+
+      function soltar(tecla) {
+          tecla.target.style.transform = "scale(1,1)";
+      }
+
+      function ejecutar() {
+          var teclas = document.getElementsByTagName('img');
+          for (i = 0; i < teclas.length; i++) {
+              teclas[i].addEventListener("mousedown", presionar);
+              teclas[i].addEventListener("mouseup", soltar);
+          }
+      }
+
+      ejecutar();
+    </script>
+</body>
+</html>
